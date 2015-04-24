@@ -1,0 +1,10 @@
+{
+    "esnext": true,
+    "undef": true,
+    "predef": [
+        "require",
+        "module",
+        "window",
+        "document"
+    ]
+}

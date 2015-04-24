@@ -1,0 +1,18 @@
+{
+  "name": "projectname",
+  "version": "0.0.0",
+  "main": "app/main.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --hot --progress --colors --content-base build"
+  },
+  "author": "Johan Klokkhammer Helsing <johanhelsing@gmail.com>",
+  "dependencies": {
+    "babel-core": "^5.1.11",
+    "babel-loader": "^5.0.0",
+    "css-loader": "^0.11.0",
+    "lodash": "^3.7.0",
+    "style-loader": "^0.11.0",
+    "three": "^0.71.0",
+    "webpack": "^1.8.9"
+  }
+}
