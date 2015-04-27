@@ -1,7 +1,9 @@
 var THREE = require('three');
-require('./main.css');
+
 var initRenderer = require('./utils/initRenderer');
 var startAnimation = require('./utils/startAnimation');
+
+require('./main.css');
 
 var init = (containerEl, width, height) => {
     var renderer = initRenderer(containerEl);
@@ -53,5 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         app.resize(window.innerWidth, window.innerHeight);
     });
-    startAnimation(() => animate(app));
+    startAnimation(timestamp => animate(app, timestamp));
 });

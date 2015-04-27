@@ -1,7 +1,7 @@
 module.exports = animate => {
-    var reanimate = () => {
-        animate();
+    var reanimate = timestamp => {
+        animate(timestamp);
         window.requestAnimationFrame(reanimate);
     };
-    reanimate();
+    reanimate(0);
 };
