@@ -27,33 +27,30 @@ var init = (containerEl, width, height) => {
     light2.position.set(0, 0, 1);
     scene.add(light2);
 
-    var updateHelpers = () => {};
+    var oldTimestamp = 0;
+    var animate = timestamp => {
+        var delta = timestamp - oldTimestamp;
+        mesh.rotation.x += 0.001 * delta;
+        mesh.rotation.y += 0.002 * delta;
+        renderer.render(scene, camera);
+        oldTimestamp = timestamp;
+    };
 
     return {
-        renderer: renderer,
-        mesh: mesh,
-        scene: scene,
-        camera: camera,
-        updateHelpers: updateHelpers,
         resize: (width, height) => {
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
             renderer.setSize(width, height);
-        }
+        },
+        animate: animate
     };
 };
 
-var animate = app => {
-    app.mesh.rotation.x += 0.01;
-    app.mesh.rotation.y += 0.02;
-    app.updateHelpers();
-    app.renderer.render(app.scene, app.camera);
-};
 
 document.addEventListener('DOMContentLoaded', () => {
     var app = init(document.body, window.innerWidth, window.innerHeight);
     window.addEventListener('resize', () => {
         app.resize(window.innerWidth, window.innerHeight);
     });
-    startAnimation(timestamp => animate(app, timestamp));
+    startAnimation(timestamp => app.animate(timestamp));
 });
