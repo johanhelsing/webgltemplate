@@ -10,6 +10,7 @@
     "babel-core": "^5.1.11",
     "babel-loader": "^5.0.0",
     "css-loader": "^0.11.0",
+    "glsl-loader": "0.0.1",
     "lodash": "^3.7.0",
     "style-loader": "^0.11.0",
     "three": "^0.71.0",
