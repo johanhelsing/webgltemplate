@@ -43,7 +43,7 @@ var init = (containerEl, width, height) => {
     return {
         resize: (width, height) => {
             camera.left = -width/height;
-            camera.right = width/height
+            camera.right = width/height;
             camera.updateProjectionMatrix();
             renderer.setSize(width, height);
         },
